@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landslides</title>
+    <style>
+        /* Base Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #e0f7fa;
+            /* Light Cyan Background */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            flex-grow: 1;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1a237e;
+            /* Deep Indigo */
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            color: #0288d1;
+            /* Light Blue */
+            margin-top: 30px;
+            border-bottom: 2px solid #b2ebf2;
+            /* Lighter Cyan */
+            padding-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.7;
+            text-align: justify;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th,
+        td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #cfd8dc;
+            /* Blue Grey */
+        }
+
+        th {
+            background-color: #03a9f4;
+            /* Light Blue */
+            color: white;
+            font-weight: 600;
+        }
+
+        td:nth-child(2) {
+            background-color: #f44336;
+            /* Red */
+            color: white;
+        }
+
+        /* Image Styles */
+        .landslide-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Home Button Styles */
+        .home-button {
+            display: block;
+            width: fit-content;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            color: white;
+            background-color: #1976d2;
+            /* Blue */
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin: 20px auto 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .home-button:hover {
+            background-color: #1565c0;
+            /* Darker Blue */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 20px auto;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            h3 {
+                font-size: 1.6em;
+            }
+
+            p,
+            td {
+                font-size: 1em;
+            }
+
+            th,
+            td {
+                padding: 12px;
+            }
+
+            .home-button {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Landslides</h2>
+        <p>
+            A landslide is the movement of rock, soil, or debris down a slope, often triggered by factors such as heavy
+            rainfall, earthquakes, volcanic activity, or human activities like deforestation or construction. It can
+            occur
+            suddenly or gradually, resulting in the mass movement of material downslope. Landslides can range in size
+            from
+            small, localized events to large-scale disasters, causing damage to property, infrastructure, and posing
+            risks
+            to human lives and the environment.
+        </p>
+
+        <h3>Do's & Don'ts</h3>
+        <p>Here are some do's and don'ts to keep in mind during a landslide:</p>
+
+        <table class="do-dont-table" aria-label="Do's and Don'ts Table">
+            <tr>
+                <th>Do's</th>
+                <th>Don'ts</th>
+            </tr>
+            <tr>
+                <td>
+                    <b>1. Stay Informed:</b> Monitor weather reports and landslide warnings.<br>
+                    <b>2. Move to Safe Areas:</b> If you live on a slope, consider relocating during heavy rain.<br>
+                    <b>3. Keep Emergency Supplies Ready:</b> Have a kit with essentials like food, water, and first
+                    aid.<br>
+                    <b>4. Report Early Signs:</b> Inform authorities of cracks or unusual ground movements.<br>
+                    <b>5. Reinforce Slopes:</b> Take steps to prevent erosion near your home if possible.<br>
+                    <b>6. Follow Evacuation Orders:</b> Leave immediately if authorities advise evacuation.
+                </td>
+                <td>
+                    <b>1. Don’t Build on Steep Slopes:</b> Avoid construction in landslide-prone areas.<br>
+                    <b>2. Don’t Block Drains:</b> Blocked drains increase landslide risk by preventing proper water
+                    flow.<br>
+                    <b>3. Avoid Removing Vegetation:</b> Trees and plants help stabilize the soil.<br>
+                    <b>4. Don’t Use Heavy Machinery on Slopes:</b> This can destabilize the soil, especially during
+                    rain.<br>
+                    <b>5. Avoid Ignoring Warning Signs:</b> Cracks, tilting trees, and unusual sounds may indicate
+                    landslide risk.<br>
+                    <b>6. Don’t Return Until Cleared:</b> Avoid returning to affected areas until officials declare it
+                    safe.
+                </td>
+            </tr>
+        </table>
+
+        <p>By following these do's and don'ts, you can help minimize the risks associated with landslides and stay safe
+            during such natural disasters.</p>
+
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Landslide_in_Cusco%2C_Peru_-_2018.jpg/1200px-Landslide_in_Cusco%2C_Peru_-_2018.jpg"
+            alt="A large landslide in Cusco, Peru" class="landslide-image">
+    </div>
+    <a href="index.html" class="home-button">Back to Home</a>
+</body>
+
+</html>
