@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Emergency Chatbot</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #2196F3, #E3F2FD);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .chat-container {
+            width: 450px;
+            /* Updated from 400px */
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .chat-header {
+            background: #2196F3;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+
+        .chat-box {
+            height: 400px;
+            overflow-y: auto;
+            padding: 20px;
+            background: #F5F5F5;
+            display: flex;
+            flex-direction: column;
+            scroll-behavior: smooth;
+        }
+
+        .chat-box div {
+            margin: 10px 0;
+            padding: 10px 15px;
+            border-radius: 15px;
+            max-width: 80%;
+            white-space: pre-line;
+        }
+
+        .user {
+            background: #64B5F6;
+            color: white;
+            align-self: flex-end;
+        }
+
+        .bot {
+            background: #E3F2FD;
+            color: #333;
+            align-self: flex-start;
+        }
+
+        .chat-input {
+            display: flex;
+            padding: 10px;
+            background: white;
+            border-top: 1px solid #ddd;
+        }
+
+        input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 20px;
+            outline: none;
+            font-size: 1em;
+            background: #F1F8E9;
+        }
+
+        button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        button:hover {
+            background: #1976D2;
+        }
+
+        .home-button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            color: white;
+            background-color: #ff5722;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .home-button:hover {
+            background-color: #e64a19;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Typing Indicator */
+        .typing {
+            font-style: italic;
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">Emergency Information Chatbot</div>
+        <div class="chat-box" id="chatBox">
+            <div class="bot">Hello! Type "earthquake", "drought", or any disaster for information.</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="userInput" placeholder="Ask me about a disaster..."
+                onkeypress="handleKeyPress(event)" />
+            <button onclick="sendMessage()">Send</button>
+        </div>
+    </div>
+
+    <div class="home-button-container">
+        <a href="index.html" class="home-button">Back to Home</a>
+    </div>
+
+    <script>
+        const disasterInfo = {
+            "cyclone": `🌪️ **Cyclone Alert**:
+- Stay indoors, away from windows.
+- Move to a shelter if near the coast.
+- Follow emergency warnings.`,
+
+            "landslide": `🏔️ **Landslide Alert**:
+- Move to higher ground away from slide-prone areas.
+- Avoid river valleys and steep slopes.
+- Follow evacuation routes.`,
+
+            "drought": `☀️ **Drought Alert**:
+- Conserve water and stay hydrated.
+- Move to areas with better water resources.
+- Follow advisories for food and water.`,
+
+            "flood": `🌊 **Flood Alert**:
+- Move to higher ground immediately.
+- Avoid walking or driving through floodwaters.
+- Follow evacuation orders.`,
+
+            "earthquake": `🌍 **Earthquake Alert**:
+- Drop, cover, and hold on during shaking.
+- Evacuate to open areas away from buildings.
+- Follow designated evacuation routes.`,
+
+            "wildfire": `🔥 **Wildfire Alert**:
+- Evacuate immediately if ordered.
+- Protect yourself from smoke inhalation.
+- Stay updated on fire warnings.`
+        };
+
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            const userInput = document.getElementById("userInput").value.trim().toLowerCase();
+            const chatBox = document.getElementById("chatBox");
+
+            if (!userInput) return;
+
+            // Display user message
+            const userMessage = document.createElement("div");
+            userMessage.classList.add("user");
+            userMessage.textContent = userInput;
+            chatBox.appendChild(userMessage);
+
+            // Show typing indicator
+            const typingIndicator = document.createElement("div");
+            typingIndicator.classList.add("bot", "typing");
+            typingIndicator.textContent = "Typing...";
+            chatBox.appendChild(typingIndicator);
+            chatBox.scrollTop = chatBox.scrollHeight;
+
+            // Simulate bot response delay
+            setTimeout(() => {
+                chatBox.removeChild(typingIndicator);
+
+                let botResponseText = "⚠️ Sorry, I don't have information on that. Try asking about earthquakes, floods, cyclones, etc.";
+
+                const matchedDisaster = Object.keys(disasterInfo).find(key => userInput.includes(key));
+                if (matchedDisaster) {
+                    botResponseText = disasterInfo[matchedDisaster];
+                }
+
+                // Display bot response
+                const botMessage = document.createElement("div");
+                botMessage.classList.add("bot");
+                botMessage.innerHTML = botResponseText;
+                chatBox.appendChild(botMessage);
+
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 1000); // 1s delay to simulate thinking
+
+            document.getElementById("userInput").value = "";
+        }
+
+    </script>
+
+</body>
+
+</html>
