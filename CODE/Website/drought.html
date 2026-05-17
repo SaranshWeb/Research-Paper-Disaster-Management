@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Droughts</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fff3e0;
+            /* Light Orange */
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            flex-grow: 1;
+        }
+
+        h2 {
+            text-align: center;
+            color: #d84315;
+            /* Darker Orange */
+            margin-bottom: 25px;
+            font-size: 2.5em;
+        }
+
+        h3 {
+            color: #1976d2;
+            /* Blue */
+            margin-top: 25px;
+            font-size: 1.8em;
+        }
+
+        p {
+            line-height: 1.7;
+            text-align: justify;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #ff9800;
+            /* Orange */
+            color: white;
+            font-weight: 600;
+        }
+
+        td {
+            border-bottom: 1px solid #e0e0e0;
+            font-size: 1em;
+        }
+
+        td:nth-child(2) {
+            background-color: #f44336;
+            /* Red */
+            color: white;
+        }
+
+        .drought-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 30px auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .drought-image:hover {
+            transform: scale(1.03);
+        }
+
+        .home-button {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            color: white;
+            background-color: #ff9800;
+            /* Orange */
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin: 20px auto 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .home-button:hover {
+            background-color: #f57c00;
+            /* Darker Orange */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 20px auto;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+
+            h3 {
+                font-size: 1.6em;
+            }
+
+            p,
+            td {
+                font-size: 1em;
+            }
+
+            th,
+            td {
+                padding: 12px;
+            }
+
+            .home-button {
+                padding: 10px 20px;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Droughts</h2>
+        <p>Drought is a prolonged period of abnormally low precipitation levels, leading to water scarcity and dry
+            conditions in an area. It can result from natural climatic variability, such as below-average rainfall or
+            snowfall, as well as human activities such as overuse of water resources, deforestation, and climate change.
+            Droughts can have severe impacts on ecosystems, agriculture, water supplies, and socio-economic activities.
+        </p>
+
+        <h3>Do's & Don'ts</h3>
+        <p><strong>Do's and Don'ts During Drought:</strong></p>
+
+        <table>
+            <tr>
+                <th>Do's</th>
+                <th>Don'ts</th>
+            </tr>
+            <tr>
+                <td>
+                    <b>1. Conserve Water:</b> Use water-saving techniques at home and in agriculture.<br>
+                    <b>2. Store Rainwater:</b> Implement rainwater harvesting methods.<br>
+                    <b>3. Plant Drought-Resistant Crops:</b> Opt for crops that require less water.<br>
+                    <b>4. Educate the Community:</b> Spread awareness about water conservation.<br>
+                    <b>5. Use Water Wisely:</b> Limit washing cars, watering gardens, and other non-essential uses.<br>
+                    <b>6. Monitor Water Sources:</b> Keep track of local water levels and supplies.
+                </td>
+                <td>
+                    <b>1. Don’t Waste Water:</b> Avoid unnecessary water use in daily activities.<br>
+                    <b>2. Don’t Ignore Restrictions:</b> Follow government water-use restrictions carefully.<br>
+                    <b>3. Avoid Planting Water-Intensive Crops:</b> During droughts, opt for crops that require less
+                    water.<br>
+                    <b>4. Don’t Burn Waste:</b> Burning can worsen air quality in dry conditions.<br>
+                    <b>5. Avoid Excessive Groundwater Use:</b> Excessive pumping can deplete local water tables.<br>
+                    <b>6. Don’t Delay Repairs on Leaks:</b> Fix any leaking taps or pipes to prevent water wastage.
+                </td>
+            </tr>
+        </table>
+
+        <p>By following these do's and don'ts, individuals, communities, and governments can contribute to mitigating
+            the impacts of drought and promoting sustainable water management practices.</p>
+
+        <img src="https://www.iisd.org/sites/default/files/styles/og_image/public/2024-06/drought-desertification-2024-screen.jpg?itok=_ygJFizX"
+            class="drought-image">
+    </div>
+    <a href="index.html" class="home-button">Back to Home</a>
+</body>
+
+</html>
